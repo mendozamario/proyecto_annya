@@ -37,7 +37,7 @@ namespace PresentacionGUI
                 Nombre = TextNombre.Text,
                 Apellido = TextApellido.Text,
                 Sexo = CmbSexo.Text,
-                FechaNacimiento = DateTimeNacimiento.Value.ToString("MMM dd yyyy"),
+                FechaNacimiento = DateTimeNacimiento.Value.ToString("MM/dd/yyyy"),
                 Telefono = TextMovil.Text,
                 Email = TextMail.Text,
                 Direccion = TextDireccion.Text,

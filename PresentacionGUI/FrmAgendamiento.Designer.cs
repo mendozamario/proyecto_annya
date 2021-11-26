@@ -67,7 +67,7 @@ namespace PresentacionGUI
             // TextCedula
             // 
             this.TextCedula.Location = new System.Drawing.Point(153, 44);
-            this.TextCedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextCedula.Margin = new System.Windows.Forms.Padding(2);
             this.TextCedula.Name = "TextCedula";
             this.TextCedula.Size = new System.Drawing.Size(91, 20);
             this.TextCedula.TabIndex = 1;
@@ -79,7 +79,7 @@ namespace PresentacionGUI
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.Location = new System.Drawing.Point(19, 70);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(91, 27);
             this.BtnBuscar.TabIndex = 2;
@@ -91,7 +91,7 @@ namespace PresentacionGUI
             // 
             this.TextCedulaPaciente.Enabled = false;
             this.TextCedulaPaciente.Location = new System.Drawing.Point(104, 106);
-            this.TextCedulaPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextCedulaPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.TextCedulaPaciente.Name = "TextCedulaPaciente";
             this.TextCedulaPaciente.Size = new System.Drawing.Size(68, 20);
             this.TextCedulaPaciente.TabIndex = 3;
@@ -100,7 +100,7 @@ namespace PresentacionGUI
             // 
             this.TextNombre.Enabled = false;
             this.TextNombre.Location = new System.Drawing.Point(104, 131);
-            this.TextNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextNombre.Margin = new System.Windows.Forms.Padding(2);
             this.TextNombre.Name = "TextNombre";
             this.TextNombre.Size = new System.Drawing.Size(68, 20);
             this.TextNombre.TabIndex = 3;
@@ -109,7 +109,7 @@ namespace PresentacionGUI
             // 
             this.TextApellido.Enabled = false;
             this.TextApellido.Location = new System.Drawing.Point(104, 158);
-            this.TextApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextApellido.Margin = new System.Windows.Forms.Padding(2);
             this.TextApellido.Name = "TextApellido";
             this.TextApellido.Size = new System.Drawing.Size(68, 20);
             this.TextApellido.TabIndex = 3;
@@ -118,7 +118,7 @@ namespace PresentacionGUI
             // 
             this.TextEdad.Enabled = false;
             this.TextEdad.Location = new System.Drawing.Point(104, 184);
-            this.TextEdad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextEdad.Margin = new System.Windows.Forms.Padding(2);
             this.TextEdad.Name = "TextEdad";
             this.TextEdad.Size = new System.Drawing.Size(68, 20);
             this.TextEdad.TabIndex = 3;
@@ -191,7 +191,7 @@ namespace PresentacionGUI
             // 
             this.CmbPsicologos.FormattingEnabled = true;
             this.CmbPsicologos.Location = new System.Drawing.Point(374, 43);
-            this.CmbPsicologos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmbPsicologos.Margin = new System.Windows.Forms.Padding(2);
             this.CmbPsicologos.Name = "CmbPsicologos";
             this.CmbPsicologos.Size = new System.Drawing.Size(149, 21);
             this.CmbPsicologos.TabIndex = 6;
@@ -202,7 +202,7 @@ namespace PresentacionGUI
             this.BtnAgendar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.BtnAgendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgendar.Location = new System.Drawing.Point(289, 192);
-            this.BtnAgendar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnAgendar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAgendar.Name = "BtnAgendar";
             this.BtnAgendar.Size = new System.Drawing.Size(63, 24);
             this.BtnAgendar.TabIndex = 7;
@@ -216,7 +216,7 @@ namespace PresentacionGUI
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.Location = new System.Drawing.Point(434, 192);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(88, 24);
             this.BtnCancelar.TabIndex = 7;
@@ -238,7 +238,7 @@ namespace PresentacionGUI
             // DtpFecha
             // 
             this.DtpFecha.Location = new System.Drawing.Point(374, 80);
-            this.DtpFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DtpFecha.Margin = new System.Windows.Forms.Padding(2);
             this.DtpFecha.Name = "DtpFecha";
             this.DtpFecha.Size = new System.Drawing.Size(149, 20);
             this.DtpFecha.TabIndex = 8;
@@ -258,8 +258,15 @@ namespace PresentacionGUI
             // CmbHora
             // 
             this.CmbHora.FormattingEnabled = true;
+            this.CmbHora.Items.AddRange(new object[] {
+            "8:00 Am - 9:00 Am",
+            "9:00 Am - 10:00 Am",
+            "10:00 Am - 11:00 Am",
+            "11:00 Am - 12:00 Am",
+            "2:00 Pm - 3:00 Pm",
+            "4:00 Pm - 5:00 Pm"});
             this.CmbHora.Location = new System.Drawing.Point(374, 120);
-            this.CmbHora.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmbHora.Margin = new System.Windows.Forms.Padding(2);
             this.CmbHora.Name = "CmbHora";
             this.CmbHora.Size = new System.Drawing.Size(149, 21);
             this.CmbHora.TabIndex = 9;
@@ -268,7 +275,7 @@ namespace PresentacionGUI
             // 
             this.DtgCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgCitas.Location = new System.Drawing.Point(20, 250);
-            this.DtgCitas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DtgCitas.Margin = new System.Windows.Forms.Padding(2);
             this.DtgCitas.Name = "DtgCitas";
             this.DtgCitas.RowHeadersWidth = 62;
             this.DtgCitas.RowTemplate.Height = 28;
@@ -303,7 +310,7 @@ namespace PresentacionGUI
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAgendamiento";
             this.Text = "FrmAgendamiento";
             this.Load += new System.EventHandler(this.FrmAgendamiento_Load);

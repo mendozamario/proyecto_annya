@@ -25,41 +25,12 @@ namespace PresentacionGUI
             ConfiguraionInicalGrid();
             CargarGrid();
             DateTimePcikerFormat();
-            ComboBoxData();
-            
         }
 
         private void DateTimePcikerFormat()
         {
             DateTime todayDate = DateTime.Now;
             DtpFecha.MinDate = todayDate;
-        }
-
-        private void ComboBoxData()
-        {
-            var respuestaService = sesionService.Consultar();
-            var citas = respuestaService.Sesion;
-
-            List<string> hours = new List<string>();
-            hours.Add("7:00 Am - 8:00 Am");
-            hours.Add("8:00 Am - 9:00 Am");
-            hours.Add("9:00 Am - 10:00 Am");
-            hours.Add("10:00 Am - 11:00 Am");
-            hours.Add("11:00 Am - 12:00 Am");
-            hours.Add("2:00 Am - 3:00 Am");
-            hours.Add("3:00 Am - 4:00 Am");
-            hours.Add("4:00 Am - 5:00 Am");
-
-            foreach (var horas in hours)
-            {
-                foreach (var horasRegistradas in citas)
-                {
-                    if (!horas.Equals(horasRegistradas))
-                    {
-                        CmbHora.Items.Add(horas);
-                    }
-                }
-            }
         }
 
         private void ValidarFecha()
@@ -139,7 +110,7 @@ namespace PresentacionGUI
             {
                 Paciente = paciente,
                 Psicologo = psicologo,
-                Fecha = DtpFecha.Text,
+                Fecha = DtpFecha.Value.ToString("MM/dd/yyyy"),
                 Hora = CmbHora.Text,
                 Estado = "Pendiente"
                 
@@ -176,6 +147,7 @@ namespace PresentacionGUI
         private void BtnAgendar_Click(object sender, EventArgs e)
         {
             ValidarFecha();
+            HoursValidation();
             if (validar == true)
             {
                 string message = sesionService.Guardar(CrearCita());
@@ -251,6 +223,21 @@ namespace PresentacionGUI
         {
             var respuesta = pacienteService.BuscarPorIdentificacion(TextCedula.Text);
             ValidarRespuestadeConsulta(respuesta);
+        }
+
+        private void HoursValidation()
+        {
+            var response = sesionService.ConsultarFecha(DtpFecha.Value.ToString("MM/dd/yyyy"));
+            foreach (var item in response.Sesion)
+            {
+                if (item.Hora == CmbHora.Text)
+                {
+                    MessageBox.Show("La hora no se encuentra disponible, por favor pruebe con una distinta");
+                }else
+                {
+                    validar = true;
+                }
+            }
         }
     }
 }

@@ -116,5 +116,29 @@ namespace BLL
                 conexion.Close();
             }
         }
+        public Responce ConsultarFecha(string fecha)
+        {
+            Responce responseSesion = new Responce();
+            try
+            {
+                conexion.Open();
+                responseSesion.Sesion = sesionRepository.ConsultarFechas(fecha);
+                conexion.Close();
+                if (responseSesion.Sesion.Count > 0) responseSesion.Message = "Consult successfull";
+                else responseSesion.Message = "Database empty";
+                responseSesion.Error = false;
+                return responseSesion;
+            }
+            catch (Exception e)
+            {
+                responseSesion.Error = true;
+                responseSesion.Message = $"Application Error {e.Message}";
+                return responseSesion;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
     }
 }

@@ -65,6 +65,26 @@ namespace DAL
             }
             return sesion;
         }
+
+        public List<Sesion> ConsultarFechas(string fecha)
+        {
+            MySqlDataReader sqlDataReader;
+            List<Sesion> sesiones = new List<Sesion>();
+            using (var command = _conexion.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Sesion WHERE Fecha = @Fecha";
+                command.Parameters.Add("Fecha", MySqlDbType.VarChar).Value = fecha;
+                sqlDataReader = command.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Sesion sesion = Mapear(sqlDataReader);
+                    sesiones.Add(sesion);
+                }
+                sqlDataReader.Close();
+            }
+            return sesiones;
+        }
+
         public List<Sesion> FiltrarPorEstado(string estado)
         {
             return (from p in Consultar()
